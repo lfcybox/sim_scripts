@@ -1,0 +1,18 @@
+**.subckt test_sch2
+R1 OUT IN1 100k m=1
+R2 IN2 OUT 50k m=1
+V1 IN1 GND 3
+V2 IN2 GND 3
+**** begin user architecture code
+
+
+.save all
+.dc V1 0 1 0.1 V2 0 1 0.2
+.plot IN1 IN2 OUT
+
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+** flattened .save nodes
+.end
